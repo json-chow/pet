@@ -660,7 +660,9 @@ def generate_ipet_train_sets(train_data: List[InputExample], unlabeled_data: Lis
             result_train = 1
         else:
             with open(results_file, 'r') as fh:
-                results = ast.literal_eval(fh.read())
+                a = fh.read()
+                print(results_file, a)
+                results = ast.literal_eval(a)
                 result_train = results['train_set_before_training']
 
         with open(logits_file, 'r') as fh:
